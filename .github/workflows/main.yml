@@ -7,7 +7,7 @@ on:
 
 jobs:
   build-linux:
-    runs-on: [self-hosted, 136787]
+    runs-on: self-hosted
     strategy:
       max-parallel: 5
 
