@@ -25,3 +25,5 @@ jobs:
         conda activate llm0203
         cd tmp
         pytest *
+        cd ~
+        pwd
