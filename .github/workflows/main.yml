@@ -27,3 +27,4 @@ jobs:
         pytest *
         cd ~
         pwd
+        pwd
