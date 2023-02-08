@@ -20,5 +20,8 @@ jobs:
     - name: Test with pytest
       run: |
         pwd
+        export PATH=~/miniconda3/bin:$PATH
+        source activate
+        conda acitvate llm0203
         cd tmp
         pytest *
