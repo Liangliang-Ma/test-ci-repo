@@ -9,6 +9,6 @@ test docker v6
   
   network
 
-test ut v1 
+test ut v2
 
-  fix install
+  fix install v2
