@@ -53,6 +53,7 @@ jobs:
 
     - name: Install deepspeed
       run: |
+        pip install py-cpuinfo
         pip install deepspeed
         ds_report
 
@@ -62,6 +63,7 @@ jobs:
 
     - name: Unit tests
       run: |
+        git clone https://github.com/microsoft/DeepSpeed.git
         cd DeepSpeed/tests
         TEST_LIST=$(echo "$TEST_LIST" | awk 'NF{printf "%s%s", (NR>1 ? " or " : ""), $0} END{if (NR>1) print ""}')
         echo "TEST_LIST ${TEST_LIST}"
