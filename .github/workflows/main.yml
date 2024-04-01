@@ -53,9 +53,7 @@ jobs:
 
     - name: Install deepspeed
       run: |
-        https://github.com/microsoft/DeepSpeed.git
-        cd Deepspeed
-        python setup.py install
+        pip install deepspeed
         ds_report
 
     - name: Python environment
