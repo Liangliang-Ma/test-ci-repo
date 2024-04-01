@@ -1,4 +1,4 @@
 # test-ci-repo
 test setup pwd
 
-test docker v2
+test docker v3
