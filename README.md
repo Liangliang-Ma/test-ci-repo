@@ -12,3 +12,5 @@ test docker v6
 test ut v5
 
   fix install v5 really?
+
+install pytest
