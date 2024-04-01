@@ -17,13 +17,14 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: hello CI world
+      shell: bash
       run: |
         pwd
-        cd ~/mll
         ls
     - name: Check container state
+      shell: bash
       run: |
         ldd --version
-        xpu-smi
+        xpu-smi discovery
         python -c "import torch; print('torch:', torch.__version__, torch)"
-        python -c "import torch; print('XPU available:', torch.xpu.is_available())"
+        python -c "import torch; import intel_extension_for_pytorch; print('XPU available:', torch.xpu.is_available())"
