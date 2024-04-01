@@ -25,6 +25,5 @@ jobs:
       shell: bash
       run: |
         ldd --version
-        xpu-smi discovery
         python -c "import torch; print('torch:', torch.__version__, torch)"
         python -c "import torch; import intel_extension_for_pytorch; print('XPU available:', torch.xpu.is_available())"
