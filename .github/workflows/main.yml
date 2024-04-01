@@ -6,15 +6,24 @@ on:
       - main
 
 jobs:
-  build-linux:
+  unit-test:
     runs-on: [self-hosted, intel]
-    strategy:
-      max-parallel: 5
+    container:
+      image: intel/intel-extension-for-pytorch:latest
+      ports:
+        - 80
+
 
     steps:
     - uses: actions/checkout@v3
-    - name: Test with pytest
+    - name: hello CI world
       run: |
         pwd
         cd ~/mll
         ls
+    - name: Check container state
+      run: |
+        ldd --version
+        xpu-smi
+        python -c "import torch; print('torch:', torch.__version__, torch)"
+        python -c "import torch; print('XPU available:', torch.xpu.is_available())"
