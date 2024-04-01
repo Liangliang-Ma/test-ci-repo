@@ -53,6 +53,8 @@ jobs:
 
     - name: Install deepspeed
       run: |
+        https://github.com/microsoft/DeepSpeed.git
+        cd Deepspeed
         pip install .[dev,autotuning]
         ds_report
 
@@ -62,7 +64,6 @@ jobs:
 
     - name: Unit tests
       run: |
-        https://github.com/microsoft/DeepSpeed.git
         cd DeepSpeed/tests
         TEST_LIST=$(echo "$TEST_LIST" | awk 'NF{printf "%s%s", (NR>1 ? " or " : ""), $0} END{if (NR>1) print ""}')
         echo "TEST_LIST ${TEST_LIST}"
