@@ -55,7 +55,7 @@ jobs:
       run: |
         https://github.com/microsoft/DeepSpeed.git
         cd Deepspeed
-        pip install .[dev,autotuning]
+        pip install .
         ds_report
 
     - name: Python environment
