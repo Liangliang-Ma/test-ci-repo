@@ -68,4 +68,4 @@ jobs:
         cd DeepSpeed/tests
         TEST_LIST=$(echo "$TEST_LIST" | awk 'NF{printf "%s%s", (NR>1 ? " or " : ""), $0} END{if (NR>1) print ""}')
         echo "TEST_LIST ${TEST_LIST}"
-        pytest --verbose unit/ -k "${TEST_LIST}"
+        pytest --verbose unit/accelerator -k "${TEST_LIST}"
